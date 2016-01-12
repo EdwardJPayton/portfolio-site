@@ -1,0 +1,40 @@
+
+/* button text */
+.contact-form.-anim-in .contact-form-button._icon {
+	transform:translate(-50%,-50%);
+}
+
+.contact-form.-sending .contact-form-button._icon {
+	background: url('../images/spinner.svg') no-repeat center center scroll transparent;
+	transform:translate(-50%,-50%) rotate(0);
+	animation: spinIcon 0.8s infinite linear;
+}
+@keyframes spinIcon {
+	100% {
+		transform:translate(-50%,-50%) rotate(360deg);
+	}
+}
+
+.contact-form.-not-sent .contact-form-button._icon {
+	background: url('../images/cross.svg') no-repeat center center scroll transparent;
+	transform:translate(-50%,-50%) rotate(359deg);
+
+}
+
+.contact-form.-sent .contact-form-button._icon {
+	background: url('../images/tick.svg') no-repeat center center scroll transparent;
+	transform:translate(-50%,-50%) rotate(359deg);
+
+}
+
+
+
+
+/* Temp styles 
+main {
+  color: silver !important;
+  h2 {
+    color: #EAEAEA !important;
+  }
+}
+*/

@@ -1,0 +1,109 @@
+// Colours
+$temp: #F0F; // e.g use as icon placeholder
+
+
+
+
+// Red - Purple
+$red: #F00;
+$tomato: #ff6347;
+$materialRed: #ff1744;
+$materialPink: #f8bbd0;
+$materialDarkOrange: #ff5722;
+
+// Blue - Green
+$blue: #00F;
+$purple: #4222F1; //#4B43E6;
+$dodgerBlue: #1E90FF;
+$materialGreenDark: #5ac615;
+$materialGreen: #76ff03;
+$materialGreenPale: #b2ff59;
+
+// Yellow - Brown
+$yellow: #FF0;
+$materialYellow: #ffd600;
+$materialAmber: #ffc107;
+$materialAmberPale: #ffecb3;
+
+// B+W - light to dark
+$white: #FFF;
+$nearWhite: #fafafa;
+$milk: #f0f1dd;
+$black: #000;
+$charcoal:#242331;
+$materialGrey: #bdbdbd;
+
+// Other colours
+$facebook: #576FAA;
+$twitter: #55ACEE;
+
+// High and low - http://alistapart.com/article/mixing-color-for-the-web-with-sass
+$highlight: $milk;
+$shadow: #1c235c;
+
+
+
+
+// Theme colors
+$bg: $purple;
+$bgPale: mix($highlight, $bg, 80%);
+$bgDark: mix($shadow, $bg, 80%);
+$bgNearWhite: mix($bg, $white, 3%);
+
+$text: mix($shadow, $bg, 90%);
+$textLight: mix($highlight, $bg, 50%);
+$textFooter: mix($highlight, $bg, 20%); //desaturate(mix($highlight, $bg, 30%), 50%);
+$textBg: $bg;
+$textPale: $milk;
+$textDark: mix($shadow, $bg, 50%);
+
+$notify: $materialAmber;
+$notifySuccess: $materialGreen;
+$notifyError: $tomato;
+
+$home: $purple;
+$blog: $bgNearWhite;
+
+$button: $purple;
+
+
+
+// Sizes
+$gap160: 160px;
+$gap120: 120px;
+$gap80: 80px;
+$gap40: 40px;
+$gap20: 20px;
+$gap10: 10px;
+
+$borderRadius12: 12px;
+$borderRadius4: 4px;
+
+
+
+
+// Icon maps
+$iconMap: (
+  "one","two","three","four"
+);
+// @each $icon in $iconMap {
+//  &.-#{$icon} {
+//    --Styles--
+//  }
+// }
+
+
+// Transitions
+$bounce: cubic-bezier(.87,-.41,.19,1.44);
+
+
+
+// Fonts
+//@import url(https://fonts.googleapis.com/css?family=Raleway:500,700,900);
+//$font1: 'Raleway', sans-serif;
+@import url(https://fonts.googleapis.com/css?family=Source+Sans+Pro:900,700,400);
+$font1: 'Source Sans Pro', sans-serif;
+
+$fontLight:400;
+$fontMid:700;
+$fontBold:900
