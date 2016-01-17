@@ -3,7 +3,7 @@
 
     <section class="header _logo">
       <a href="/" title="Edward J Payton" class="not-ajax-link">
-        <h1>E<span>dward&nbsp;</span>J<span>&nbsp;</span>P<span>ayton</span></h1>
+        <h1>E<span>dward&nbsp;</span>P<span>ayton</span></h1>
       </a>
     </section>
 

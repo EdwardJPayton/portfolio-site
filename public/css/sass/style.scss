@@ -56,6 +56,9 @@ html {
 }
 
 // Repeating general styles
+.hide {
+  display: none;
+}
 %white-bg {
   background: $white;
 }
@@ -589,137 +592,161 @@ body {
 //end
 
 // JS -page transitions
-#body {
+// State
+.anim-intro {
+  h1,
+  p {
+    opacity: 1;
+    -webkit-transform:  translateY(0) rotate(0);
+    -ms-transform:      translateY(0) rotate(0);
+    transform:          translateY(0) rotate(0);
+    transition: all 0.5s ease;
+  }
+}
+.anim-content,
+.anim-gradient:before,
+footer {
+  opacity: 1;
+  -webkit-transform:  translateY(0);
+  -ms-transform:      translateY(0);
+  transform:          translateY(0);
+  transition: all 0.5s ease;
+}
+.anim-gradient {
+  // TODO - shrink gradient? 
+}
+.anim-home {
+  opacity: 1;
+  transition: all 0.5s ease;
+}
+.home-intro._text span {
+  display: inline-block;
+}
+.home-intro._text span,
+.home-intro._text.-no2,
+.home-intro._text.-no3 span {
+  opacity: 1;
+  -webkit-transform:  translateY(0) rotate(0);
+  -ms-transform:      translateY(0) rotate(0);
+  transform:          translateY(0) rotate(0);
+  transition: all 0.5s ease;
+}
+// Out
+.-anim-out {
   .anim-intro {
     h1,
     p {
-      opacity: 1;
-      -webkit-transform:  translateY(0) rotate(0);
-      -ms-transform:      translateY(0) rotate(0);
-      transform:          translateY(0) rotate(0);
-      transition: all 0.5s ease;
+      opacity: 0;
+    }
+    h1 {
+      -webkit-transform:  translateY(10px) rotate(2deg);
+      -ms-transform:      translateY(10px) rotate(2deg);
+      transform:          translateY(10px) rotate(2deg);
+    }
+    p {
+      -webkit-transform:  translateY(20px) rotate(1deg);
+      -ms-transform:      translateY(20px) rotate(1deg);
+      transform:          translateY(20px) rotate(1deg);
     }
   }
-  .anim-content,
+  .anim-content {
+    -webkit-transform:  translateY(50px);
+    -ms-transform:      translateY(50px);
+    transform:          translateY(50px);
+    opacity: 0;
+  }
   .anim-gradient:before,
   footer {
-    opacity: 1;
-    -webkit-transform:  translateY(0);
-    -ms-transform:      translateY(0);
-    transform:          translateY(0);
-    transition: all 0.5s ease;
-  }
-  .anim-gradient {
-    // TODO - shrink gradient? 
+    opacity: 0;
   }
   .anim-home {
-    opacity: 1;
-    transition: all 0.5s ease;
-    .home-intro._text span {
-      display: inline-block;
-    }
-    .home-intro._text span,
-    .home-intro._text.-no2,
-    .home-intro._text.-no3 {
-      opacity: 1;
-      -webkit-transform:  translateY(0) rotate(0);
-      -ms-transform:      translateY(0) rotate(0);
-      transform:          translateY(0) rotate(0);
-      transition: all 0.5s ease;
-    }
+    opacity: 0;
+    transition-delay: 0.3s;
   }
-  &.-anim-out {
-    .anim-intro {
-      h1,
-      p {
-        opacity: 0;
-      }
-      h1 {
-        -webkit-transform:  translateY(10px) rotate(2deg);
-        -ms-transform:      translateY(10px) rotate(2deg);
-        transform:          translateY(10px) rotate(2deg);
-      }
-      p {
-        -webkit-transform:  translateY(20px) rotate(1deg);
-        -ms-transform:      translateY(20px) rotate(1deg);
-        transform:          translateY(20px) rotate(1deg);
-      }
-    }
-    .anim-content {
-      -webkit-transform:  translateY(50px);
-      -ms-transform:      translateY(50px);
-      transform:          translateY(50px);
+  .home-intro._text {
+    &.-no1 span,
+    &.no-2,
+    &.no-3 span {
       opacity: 0;
+      transform: translateY(20px);
     }
-    .anim-home {
-      opacity: 0;
-      transition-delay: 0.3s;
-      .home-intro._text {
-        &.-no1 span {
-          opacity: 0;
-          transform: translateY(20px);
-          transition-delay: 0.2s;
-        }
-        &.-no2 {
-          opacity: 0;
-          transform: translateY(20px);
-          transition-delay: 0.1s;
-        }
-        &.-no3 {
-          opacity: 0;
-          transform: translateY(20px);
-        }
-      }
+    &.-no1 span {
+      transition-delay: 0.2s;
     }
-    .anim-gradient:before,
-    footer {
-      opacity: 0;
+    &.-no2 {
+      transition-delay: 0.1s;
     }
-  }
-  &.-anim-in {
-    .anim-intro {
-      h1,
-      p {
-        opacity: 0;
-      }
-      h1 {
-        -webkit-transform:  translateY(10px) rotate(-2deg);
-        -ms-transform:      translateY(10px) rotate(-2deg);
-        transform:          translateY(10px) rotate(-2deg);
-      }
-      p {
-        -webkit-transform:  translateY(20px) rotate(-1deg);
-        -ms-transform:      translateY(20px) rotate(-1deg);
-        transform:          translateY(20px) rotate(-1deg);
-      }
-    }
-    .anim-content {
-      -webkit-transform:  translateY(50px);
-      -ms-transform:      translateY(50px);
-      transform:          translateY(50px);
-      opacity: 0;
-    }
-    .anim-home {
-      .home-intro._text {
-        &.-no1 {
-          .span1 {
-            transtion-delay: 0.5s;
-          }
-          .span2 {
-            transition-delay: 0.5s;
-          }
-        }
-        &.-no2 {
-          transition-delay: 1s;
-        }
-        &.-no3 {
-          transition-delay: 1.5s;
-        }
-      }
+    &.-no3 span {
     }
   }
 }
+// In
+.-anim-in {
+  .anim-intro {
+    h1,
+    p {
+      opacity: 0;
+    }
+    h1 {
+      -webkit-transform:  translateY(10px) rotate(-2deg);
+      -ms-transform:      translateY(10px) rotate(-2deg);
+      transform:          translateY(10px) rotate(-2deg);
+    }
+    p {
+      -webkit-transform:  translateY(20px) rotate(-1deg);
+      -ms-transform:      translateY(20px) rotate(-1deg);
+      transform:          translateY(20px) rotate(-1deg);
+    }
+  }
+  .anim-content {
+    -webkit-transform:  translateY(50px);
+    -ms-transform:      translateY(50px);
+    transform:          translateY(50px);
+    opacity: 0;
+  }
+  //.anim-home {
+  .home-intro._text {
+    &.-no1 {
+      .span1,
+      .span2 {
+        transition-delay: 0.2s;
+      }
+    }
+    &.-no2 {
+      transition-delay: 0.8s;
+    }
+    &.-no3 span {
+      transition-delay: 1.1s;
+    }
+  }
+  //}
+}
+// Home transitions in keyframes for http load
+@keyframes home-intro-anim {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+.home-intro {
+  //animation:home-intro-anim 0.5s ease-in-out;
+  //animation-fill-mode: forwards;
+}
+//
+$i: 0;
+/*
+@for $i from 1 through 5 {
+  span:nth-of-type(#{$i}) {
+    transition-delay: #{($i / 10)}s;
+  }
+}
+*/
 
+// 
 .page {
   &-home {
     //background: $home;
@@ -1135,7 +1162,9 @@ main {
     min-height: 200px;
   }
   &._headline {
-    font-size: rem(2.5rem);
+    max-width: grid(7,true);
+    margin: auto;
+    text-align: left;
   }
   &._skills {
     font-size: rem(1.6rem);

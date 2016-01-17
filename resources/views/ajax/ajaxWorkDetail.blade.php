@@ -10,12 +10,12 @@
       <img src="{!! $projectArr['project_image'] !!}" />
     </div>
 
-    <div class="project _brief">
+    <div class="project _brief text-pale">
       <h3 class="text-centered-h text-pale">The brief</h3>
       {!! $projectArr['project_brief'] !!}
     </div>
 
-    <div class="project _detail">
+    <div class="project _detail text-pale">
       <h3 class="text-centered-h text-pale">The work</h3>
       {!! $projectArr['project_detail'] !!}
     </div>

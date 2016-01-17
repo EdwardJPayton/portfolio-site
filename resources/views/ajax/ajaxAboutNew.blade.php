@@ -41,9 +41,22 @@
     </div>
 
     <div class="about-api">
-      <p>Codepen</p>
-      <p>Github repos</p>
-      <p>Instagram</p>
+      <div class="about-api _github">
+        <p>I'm working on <span id="repoTotal"></span> repos on Github</p>
+        <ul id="apiGithub"></ul>
+
+        <div class="hide">
+          <p>and <span></span> Gists</p>
+          <ul></ul>
+        </div>
+      </div>
+      <div class="about-api _codepen">
+        <p>I try things out on <a href="http://codepen.io/edwardjpayton/" target="_blank">Codepen</a></p>
+      </div>
+      <div class="about-api _instgram hide">
+        <p>See what I've been upto on Instgram</p>
+        <ul id="apiInstgram"></ul>
+      </div>
     </div>
   </div>
 </div>

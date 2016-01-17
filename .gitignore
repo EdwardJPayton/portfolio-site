@@ -12,18 +12,18 @@ storage/
 ### WordPress ###
 *.log
 .htaccess
-sitemap.xml
-sitemap.xml.gz
-wp-config.php
-wp-content/advanced-cache.php
-wp-content/backup-db/
-wp-content/backups/
-wp-content/blogs.dir/
-wp-content/cache/
-wp-content/upgrade/
-wp-content/uploads/
-wp-content/wp-cache-config.php
-wp-content/plugins/hello.php
+public/wordpress/sitemap.xml
+public/wordpress/sitemap.xml.gz
+public/wordpress/wp-config.php
+public/wordpress/wp-content/advanced-cache.php
+public/wordpress/wp-content/backup-db/
+public/wordpress/wp-content/backups/
+public/wordpress/wp-content/blogs.dir/
+public/wordpress/wp-content/cache/
+public/wordpress/wp-content/upgrade/
+public/wordpress/wp-content/uploads/
+public/wordpress/wp-content/wp-cache-config.php
+public/wordpress/wp-content/plugins/hello.php
 
 /readme.html
 /license.txt
